@@ -1,7 +1,7 @@
-import { ReactElement, FC } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const LoginScreen = ({ history }: RouteComponentProps): ReactElement<FC> => {
+function LoginScreen() {
+  const history = useHistory();
   const handleLogin = () => history.replace("/");
 
   return (
@@ -13,6 +13,6 @@ const LoginScreen = ({ history }: RouteComponentProps): ReactElement<FC> => {
       </button>
     </div>
   );
-};
+}
 
 export default LoginScreen;

@@ -5,7 +5,10 @@ export interface Heroes {
   alter_ego: string;
   first_appearance: string;
   characters: string;
+  img?: string;
 }
+
+// import img1 from "../assets/heroes/dc-arrow.jpg";
 
 export const heroes: Array<Heroes> = [
   {
