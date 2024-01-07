@@ -1,4 +1,4 @@
-import { HeroList } from "../../components/HeroList/HeroList";
+import { HeroList } from "../../components";
 
 function MarvelScreen() {
   return (

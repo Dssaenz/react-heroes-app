@@ -1,6 +1,6 @@
 import { Navbar } from "../components";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { DcScreen, HeroesScreen, MarvelScreen } from "../pages";
+import { DcScreen, HeroeScreen, MarvelScreen } from "../pages";
 
 function DashboardRoutes() {
   return (
@@ -9,7 +9,7 @@ function DashboardRoutes() {
       <div className="container mt-2">
         <Switch>
           <Route exact path="/marvel" component={MarvelScreen} />
-          <Route exact path="/heroe/:heroeId" component={HeroesScreen} />
+          <Route exact path="/heroe/:heroeId" component={HeroeScreen} />
           <Route exact path="/dc" component={DcScreen} />
 
           <Redirect to="/marvel" />
