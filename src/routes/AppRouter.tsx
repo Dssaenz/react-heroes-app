@@ -1,16 +1,32 @@
-import { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Suspense, lazy, useContext } from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+
+import DashboardRoutes from "./DashboardRoutes";
+import { PublicRoutes } from "./PublicRoutes";
+import { PrivateRoutes } from "./PrivateRoutes";
+
+import { AuthContext } from "../auth/authContext";
 
 const LoginScreen = lazy(() => import("../pages/LoginScreen"));
-const DashboardRoutes = lazy(() => import("./DashboardRoutes"));
 
 export default function AppRoutes() {
+  const { logged } = useContext(AuthContext);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Router>
         <Switch>
-          <Route exact path="/login" component={LoginScreen} />
-          <Route path="/" component={DashboardRoutes} />
+          <PublicRoutes
+            path="/login"
+            component={LoginScreen}
+            isAuthenticated={logged}
+          />
+
+          <PrivateRoutes
+            path="/"
+            component={DashboardRoutes}
+            isAuthenticated={logged}
+          />
         </Switch>
       </Router>
     </Suspense>

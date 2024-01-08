@@ -1,6 +1,12 @@
-import { Navbar } from "../components";
+import { lazy } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { DcScreen, HeroeScreen, MarvelScreen, SearchScreen } from "../pages";
+
+import { Navbar } from "../components";
+
+const DcScreen = lazy(() => import("../pages/DcScreen"));
+const SearchScreen = lazy(() => import("../pages/SearchScreen"));
+const MarvelScreen = lazy(() => import("../pages/MarvelScreen"));
+const HeroeScreen = lazy(() => import("../pages/HeroeScreen"));
 
 function DashboardRoutes() {
   return (
