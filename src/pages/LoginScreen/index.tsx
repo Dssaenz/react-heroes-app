@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../auth/authContext";
+import { ASYNC_STORAGE_KEYS } from "../../types/enums";
 
 function LoginScreen() {
   const history = useHistory();
-  const handleLogin = () => history.replace("/");
+  const { signIn } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    const lastPath = localStorage.getItem(ASYNC_STORAGE_KEYS.PATH_NAME) || "/";
+    signIn({ name: "Darwin Saenz" });
+    history.replace(lastPath);
+  };
 
   return (
     <div className="container mt-5">

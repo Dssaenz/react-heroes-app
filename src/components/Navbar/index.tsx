@@ -1,7 +1,17 @@
-import { FC } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { FC, useContext } from "react";
+import { Link, NavLink, useHistory } from "react-router-dom";
+
+import { AuthContext } from "../../auth/authContext";
 
 const Navbar: FC = () => {
+  const history = useHistory();
+  const { name, signOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    history.replace("/login");
+    signOut();
+  };
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
@@ -26,9 +36,10 @@ const Navbar: FC = () => {
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul className="navbar-nav ml-auto">
-          <NavLink className="nav-item nav-link" to="/login">
+          <p className="nav-item nav-link text-info m-0">{name}</p>
+          <button className="nav-item nav-link btn" onClick={handleLogout}>
             Logout
-          </NavLink>
+          </button>
         </ul>
       </div>
     </nav>
