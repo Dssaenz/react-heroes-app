@@ -3,7 +3,7 @@ import { HeroList } from "../../components";
 function DcScreen() {
   return (
     <div>
-      <p>DC Screeen</p>
+      <p>DC Screen</p>
       <hr />
       <HeroList publisher="DC Comics" />
     </div>
