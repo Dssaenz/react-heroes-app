@@ -7,11 +7,6 @@ import {
 } from "react-router-dom";
 import { ASYNC_STORAGE_KEYS } from "../types/enums";
 
-// interface PrivateRoutesProps extends RouteComponentProps {
-//   isAuthenticated: boolean;
-//   component: React.ElementType;
-// }
-
 interface PrivateRoutesProps {
   path: string;
   isAuthenticated: boolean;
