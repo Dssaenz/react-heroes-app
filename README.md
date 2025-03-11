@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Hero App Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/-React-20232a?logo=react&style=for-the-badge)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+![React Router](https://img.shields.io/badge/react%20router-%23CA4245.svg?style=for-the-badge&logo=react-router&logoColor=white)
+![Jest](https://img.shields.io/badge/jest-%23C21325.svg?style=for-the-badge&logo=jest&logoColor=white)
 
-Currently, two official plugins are available:
+React web app build with React and TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Demo!
 
-## Expanding the ESLint configuration
+- React frontend [https://dssaenz.github.io/react-heroes-app/](https://dssaenz.github.io/react-heroes-app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Features!
 
-- Configure the top-level `parserOptions` property like this:
+- All with TypeScript
+- Frontend deployed in Github pages
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Installation
+
+Requires [Node](https://nodejs.org/) v16.13.0 to run.
+Requires [NPM](https://www.npmjs.com/) v16.13.0 to run.
+Requires [YARN](https://yarnpkg.com/) 1.22.19 to run.
+
+### Frontend
+
+With yarn
+
+```sh
+$ cd react-heroes-app
+$ yarn
+$ yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+With npm
+
+```sh
+$ cd react-heroes-app
+$ npm install
+$ npm run dev
+```
