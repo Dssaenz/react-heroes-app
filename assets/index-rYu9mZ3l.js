@@ -1,0 +1,1 @@
+import{j as r}from"./index-xdT8x281.js";import{H as s}from"./index-fLfGwFaV.js";import"./marvel-wolverine-_9F0E3RG.js";import"./index-fcCAq-ue.js";function m(){return r.jsxs("div",{children:[r.jsx("p",{children:"DC Screen"}),r.jsx("hr",{}),r.jsx(s,{publisher:"DC Comics"})]})}export{m as default};
