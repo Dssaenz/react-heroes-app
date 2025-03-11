@@ -1,6 +1,6 @@
 import { AUTH_USER } from "../types/enums";
 
-type AuthActions =
+export type AuthActions =
   | {
       type: AUTH_USER.LOGIN;
       payload: {

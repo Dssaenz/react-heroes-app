@@ -9,7 +9,6 @@ interface HeroListProps {
 
 const HeroList: FC<HeroListProps> = ({ publisher }) => {
   const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
-
   return (
     <div className="card-columns">
       {heroes.map((heroe) => (

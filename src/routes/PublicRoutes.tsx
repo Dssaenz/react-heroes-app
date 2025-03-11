@@ -1,11 +1,6 @@
 import { FC } from "react";
 import { Route, Redirect, RouteComponentProps } from "react-router-dom";
 
-// interface PublicRoutesProps extends RouteComponentProps {
-//   isAuthenticated: boolean;
-//   component: React.ElementType;
-// }
-
 interface PublicRoutesProps {
   path: string;
   component: React.ElementType;
