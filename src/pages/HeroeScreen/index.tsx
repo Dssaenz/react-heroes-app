@@ -6,11 +6,17 @@ import { getHeroesById } from "../../selectors/getHeroesById";
 interface RouteParams {
   heroeId: string;
 }
+const images = import.meta.glob<string>("../../assets/heroes/*.jpg", {
+  eager: true,
+  import: "default",
+});
 
 function HeroeScreen() {
   const history = useHistory();
   const { heroeId } = useParams<RouteParams>();
   const heroe = useMemo(() => getHeroesById(heroeId), [heroeId]);
+
+  const imageSrc = images[`../../assets/heroes/${heroeId}.jpg`];
 
   if (!heroe) {
     return <Redirect to="/" />;
@@ -19,17 +25,10 @@ function HeroeScreen() {
   const { superhero, alter_ego, characters, first_appearance, publisher } =
     heroe;
 
-  const handleReturn = () =>
-    history.length <= 2 ? history.push("/") : history.goBack();
-
   return (
     <div className="row mt-5">
       <div className="col-4">
-        <img
-          alt={superhero}
-          src={`../../assets/heroes/${heroeId}.jpg`}
-          className="img-thumbnail"
-        />
+        <img alt={superhero} src={imageSrc} className="img-thumbnail" />
       </div>
 
       <div className="col-8">
@@ -52,7 +51,10 @@ function HeroeScreen() {
         <h5>Characters</h5>
         <p>{characters}</p>
 
-        <button onClick={handleReturn} className="btn btn-outline-info">
+        <button
+          onClick={() => history.goBack()}
+          className="btn btn-outline-info"
+        >
           Return
         </button>
       </div>
